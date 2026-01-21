@@ -57,11 +57,21 @@ function App() {
         setTodos(todos.filter(todo => todo.id !== id));
     };
 
+    // Calculate task statistics
+    const completedCount = todos.filter(todo => todo.completed).length;
+    const totalCount = todos.length;
+
     // 4. JSX: The UI structure. It looks like HTML but is actually JavaScript.
     return (
         <div className="App">
             <h1>✨ Task Master Pro</h1>
             <p className="subtitle">Organize your tasks efficiently</p>
+            
+            <div className="task-stats">
+                <span className="stat-item">Total: {totalCount}</span>
+                <span className="stat-item">Completed: {completedCount}</span>
+                <span className="stat-item">Remaining: {totalCount - completedCount}</span>
+            </div>
 
             <form className="todo-form" onSubmit={handleAddTodo}>
                 <input
