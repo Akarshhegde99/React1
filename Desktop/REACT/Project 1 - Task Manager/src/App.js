@@ -60,7 +60,8 @@ function App() {
     // 4. JSX: The UI structure. It looks like HTML but is actually JavaScript.
     return (
         <div className="App">
-            <h1>✨ Task Master</h1>
+            <h1>✨ Task Master Pro</h1>
+            <p className="subtitle">Organize your tasks efficiently</p>
 
             <form className="todo-form" onSubmit={handleAddTodo}>
                 <input
